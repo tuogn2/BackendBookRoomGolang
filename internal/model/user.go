@@ -1,12 +1,16 @@
 package model
 
-import "time"
+import (
+	"time"
+)
 
 type User struct {
-	ID        uint      `json:"id" gorm:"primaryKey"`
-	Name      string    `json:"name"`
-	Email     string    `json:"email" gorm:"unique"`
-	Password  string    `json:"-"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
+	Name      string    `json:"name"`                // Tên người dùng
+	Email     string    `json:"email" gorm:"unique"` // Email duy nhất
+	Password  string    `json:"password"`            // Mật khẩu người dùng
+	Phone     string    `json:"phone"`               // Số điện thoại người dùng
+	Avatar    string    `json:"avt"`                 // Đường dẫn tới ảnh đại diện
+	Birthday  time.Time `json:"birthday"`            // Ngày sinh
+	CreatedAt time.Time `json:"created_at"`          // Thời gian tạo
+	UpdatedAt time.Time `json:"updated_at"`          // Thời gian cập nhật
 }
